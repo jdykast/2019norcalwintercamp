@@ -1,0 +1,241 @@
+/*
+ * NorCal Winter Camp 2018
+ * styles.css
+ *
+*/
+
+
+/*=======================================================
+	Global
+=======================================================*/
+html {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+
+/*=======================================================
+	Header
+=======================================================*/
+header {
+	position: relative;
+	width: 100%;
+	min-height: auto;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	background-position: center;
+	background-image: url('../img/header-bg.png');
+	background-color: #fff;
+	text-align: center;
+	color: #000;
+}
+
+header .header-content {
+	position: relative;
+	text-align: center;
+	padding: 60px 15px 100px;
+	width: 100%;
+}
+
+header .header-content .header-content-inner h1 {
+	background: url('../img/logo-black.svg') no-repeat;
+	background-position: center;
+	font-size: 30px;
+	font-weight: 700;
+	height: 350px;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-indent: -9999px;
+	text-transform: uppercase;
+}
+
+header .header-content .header-content-inner h2 {
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-top: 50px;
+	margin-bottom: 0;
+	font-size: 30px;
+}
+
+header .header-content .header-content-inner p {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+	header {
+		min-height: 100%;
+	}
+
+	header .header-content {
+		position: absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		padding: 0 50px;
+	}
+}
+
+
+/*=======================================================
+	Nav
+=======================================================*/
+nav {
+	text-transform: uppercase;
+}
+
+#main-nav a.navbar-brand {
+	font-size: 1rem;
+}
+
+#rsvp-link {
+	color: #fff;
+}
+
+#rsvp-link:hover {
+	color: #fff;
+}
+
+
+/*=======================================================
+	Blurb
+=======================================================*/
+#blurb {
+	padding: 3rem 0;
+}
+
+#blurbHeader h2 {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+/* --- Step 1 (>576) --- */
+@media (min-width: 576px) {
+	#blurbHeader {
+		text-align: right;
+	}
+}
+
+/* --- Step 2 (>768) --- */
+@media (min-width: 768px) {
+	#blurb {
+		padding: 4rem 0 3rem;
+	}
+}
+
+/* --- Step 3 (768-1199) --- */
+@media (max-width: 1199px) and (min-width: 768px) {
+	#blurbHeader h2 {
+		font-size: 3rem;
+		line-height: .9;
+		margin-top: 0;
+	}
+}
+
+/* --- Step 4 (>1200) --- */
+@media (min-width: 1200px) {
+	#blurbHeader h2 {
+		font-size: 5rem;
+		line-height: .9;
+		margin-top: 0;
+	}
+}
+
+
+/*=======================================================
+	Banner
+=======================================================*/
+#banner {
+	background: #252525 url('../img/group.png') no-repeat center top;
+	background-size: cover;
+	height: 271px;
+	margin-bottom: 4rem;
+}
+
+@media (max-width: 767px) {
+	#banner {
+		height: 100px;
+	}
+}
+
+
+/*=======================================================
+	Details
+=======================================================*/
+#details .col-sm-5 h2 {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/* --- Step 1 (>576): Right align text --- */
+@media (min-width: 576px) {
+	#details .col-sm-5, .detail-header {
+		text-align: right;
+	}
+}
+
+/* --- Step 2 (>1200): Type tweaks --- */
+@media (min-width: 1200px) {
+	#details .col-sm-5 h2 {
+		font-size: 2.9rem;
+		line-height: 1;
+	}
+
+	#details .col-sm-7 p {
+		margin-bottom: 2rem;
+	}
+}
+
+
+/*=======================================================
+	RSVP / Reservations
+=======================================================*/
+#reservation .col-sm-5 h2 {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/* --- Step 1 (>576): Right align text --- */
+@media (min-width: 576px) {
+	#reservation .col-sm-5 {
+		text-align: right;
+	}
+}
+
+/* --- Step 2 (>1200): Type tweaks --- */
+@media (min-width: 1200px) {
+	#reservation .col-sm-5 h2 {
+		font-size: 2.9rem;
+		line-height: 1;
+	}
+}
+
+
+/*=======================================================
+	Footer
+=======================================================*/
+footer {
+	background-color: #212529;
+	color: rgba(255, 255, 255, 0.5);
+	font-size: .8rem;
+	margin-top: 2rem;
+	padding: 3rem 0 1rem;
+}
+
+footer a {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: #fff;
+}
