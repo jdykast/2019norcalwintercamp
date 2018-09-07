@@ -14,7 +14,6 @@ html {
 }
 
 body {
-	font-family: 'Helvetica Neue', Arial, sans-serif;
 	height: 100%;
 	width: 100%;
 	position: relative;
@@ -27,31 +26,34 @@ body {
 header {
 	position: relative;
 	width: 100%;
-	min-height: auto;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
-	background-position: center;
+	background-position: center bottom;
 	background-image: url('../img/header-bg.gif');
 	background-color: #fff;
 	text-align: center;
-	color: #000;
+	min-height: 100%;
 }
 
-header .header-content {
-	position: relative;
-	text-align: center;
-	padding: 60px 15px 100px;
+header .header-content {	
+	position: absolute;
+	top: 50%;
 	width: 100%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 header .header-content .header-content-inner h1 {
 	background: url('../img/logo-black.svg') no-repeat;
 	background-position: center;
-	font-size: 30px;
+	font-size: 2rem;
 	font-weight: 700;
+	/* height set in breakpoints
 	height: 350px;
+	*/
 	margin-top: 0;
 	margin-bottom: 0;
 	text-indent: -9999px;
@@ -59,29 +61,71 @@ header .header-content .header-content-inner h1 {
 }
 
 header .header-content .header-content-inner h2 {
+	/* 
+	font-size set in media queries
+	*/
 	font-weight: 700;
-	text-transform: uppercase;
-	margin-top: 50px;
+	margin-top: 2rem;
 	margin-bottom: 0;
-	font-size: 30px;
+	text-shadow: 0 0 16px rgba(255, 255, 255, .6);
 }
 
-header .header-content .header-content-inner p {
-	color: rgba(255, 255, 255, 0.5);
+header .header-content .header-content-inner h3 {
+	font-size: 2.25rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-shadow: 0 0 16px rgba(255, 255, 255, .8);
 }
 
-@media (min-width: 768px) {
-	header {
-		min-height: 100%;
+header .header-content .header-content-inner p a {
+	font-weight: 500;
+	box-shadow: 0 0 16px 8px rgba(255, 255, 255, .6);
+	/*
+	Font size and padding set in media queries
+	*/
+}
+
+/*========================
+	Media Queries -
+	Header
+=========================*/
+/* --- [<576] --- */
+@media (max-width: 575px) {
+	header .header-content .header-content-inner h1 {
+		height: 200px;
 	}
 
-	header .header-content {
-		position: absolute;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		transform: translateY(-50%);
-		padding: 0 50px;
+	header .header-content .header-content-inner h2 {
+		font-size: 1.75rem;
+	}
+
+	header .header-content .header-content-inner h3 {
+		font-size: 1.5rem;
+	}
+
+	header .header-content .header-content-inner p a {
+		font-size: 1.75rem;
+		padding: .5rem 2rem;
+	}
+}
+
+/* --- [>576] --- */
+@media (min-width: 576px) {
+	header .header-content .header-content-inner h1 {
+		height: 350px;
+	}
+
+	header .header-content .header-content-inner h2 {
+		font-size: 2rem;
+	}
+
+	header .header-content .header-content-inner h3 {
+		font-size: 1.75rem;
+	}
+
+	header .header-content .header-content-inner p a {
+		font-size: 1.75rem;
+		padding: .5rem 4rem;
 	}
 }
 
@@ -90,19 +134,8 @@ header .header-content .header-content-inner p {
 	Nav
 =======================================================*/
 nav {
-	text-transform: uppercase;
-}
-
-#main-nav a.navbar-brand {
-	font-size: 1rem;
-}
-
-#rsvp-link {
-	color: #fff;
-}
-
-#rsvp-link:hover {
-	color: #fff;
+	background-color: rgba(255, 255, 255, .9);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .1);
 }
 
 
@@ -110,113 +143,256 @@ nav {
 	Blurb
 =======================================================*/
 #blurb {
-	padding: 3rem 0;
+	margin-top: 3rem;
 }
 
-#blurbHeader h2 {
+#blurb h2 {
 	font-weight: 700;
-	text-transform: uppercase;
-}
-
-/* --- Step 1 (>576) --- */
-@media (min-width: 576px) {
-	#blurbHeader {
-		text-align: right;
-	}
-}
-
-/* --- Step 2 (>768) --- */
-@media (min-width: 768px) {
-	#blurb {
-		padding: 4rem 0 3rem;
-	}
-}
-
-/* --- Step 3 (768-1199) --- */
-@media (max-width: 1199px) and (min-width: 768px) {
-	#blurbHeader h2 {
-		font-size: 3rem;
-		line-height: .9;
-		margin-top: 0;
-	}
-}
-
-/* --- Step 4 (>1200) --- */
-@media (min-width: 1200px) {
-	#blurbHeader h2 {
-		font-size: 5rem;
-		line-height: .9;
-		margin-top: 0;
-	}
-}
-
-
-/*=======================================================
-	Banner
-=======================================================*/
-#banner {
-	background: #252525 url('../img/group.png') no-repeat center top;
-	background-size: cover;
-	height: 271px;
-	margin-bottom: 4rem;
-}
-
-@media (max-width: 767px) {
-	#banner {
-		height: 100px;
-	}
+	text-align: center;
+	margin-bottom: 2rem;
 }
 
 
 /*=======================================================
 	Details
 =======================================================*/
-#details .col-sm-5 h2 {
-	text-transform: uppercase;
-	font-weight: 700;
+#details{
+	border-top: 1px solid #eee;
+	margin-top: 3rem;
+	padding-top: 4rem;
 }
 
-/* --- Step 1 (>576): Right align text --- */
-@media (min-width: 576px) {
-	#details .col-sm-5, .detail-header {
-		text-align: right;
-	}
+/*
+.profile-pic {
+	display: inline-block;
+	width: 330px;
+	height: 330px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
 }
 
-/* --- Step 2 (>1200): Type tweaks --- */
-@media (min-width: 1200px) {
-	#details .col-sm-5 h2 {
-		font-size: 2.9rem;
-		line-height: 1;
-	}
+#speaker {
+	background: #fff url('../img/rory.jpg') no-repeat center 40%;
+}
 
-	#details .col-sm-7 p {
+#worship {
+	background: #fff url('../img/revo.jpg') no-repeat center 53%;
+}
+
+.profile-label {
+	text-align: center;
+	margin-top: 74%;
+	padding: .8rem 0 4rem;
+	background: rgba(0, 0, 0, .6);
+	color: #fff;
+}
+
+.profile-pic h3 {
+	margin-bottom: 0;
+}
+*/
+
+.profile-pic a {
+	color: #fff;
+	border-bottom: 2px solid rgba(255, 255, 255, .4)
+}
+
+.profile-pic a:hover {
+	color: #fff;
+	text-decoration: none;
+	border-bottom: 2px solid rgba(255, 255, 255, .8)
+}
+
+.info-block {
+	/*width: 330px;
+	padding-left: 100px;
+	margin-top: 3rem;
+	min-height: 4.2rem;*/
+}
+
+#details h3, #details p {
+	margin-bottom: 0;
+}
+
+#info-dates {
+	background: #fff url('../img/icon-calendar.svg') no-repeat left top;
+}
+
+#info-cost {
+	background: #fff url('../img/icon-usd.svg') no-repeat left top;
+}
+
+#info-location {
+	background: #fff url('../img/icon-pin.svg') no-repeat left top;
+}
+
+#info-register {
+	background: #fff url('../img/icon-create.svg') no-repeat left top;
+}
+
+/*
+#info-dates, #info-cost, #info-location, #info-register {
+	background-size: 4rem;
+}
+
+#details .btn {
+	margin-top: 3rem;
+	padding: .5rem 4rem;
+}
+
+#details .btn h2 {
+	margin-bottom: 0;
+}
+*/
+
+/*========================
+	Media Queries -
+	Details
+=========================*/
+/* --- [ <576 ] --- */
+@media (max-width: 575px) {
+	#details h2 {
+		text-align: center;
+		font-weight: 700;
 		margin-bottom: 2rem;
 	}
+
+	.profile-pic {
+		display: inline-block;
+		width: 100%;
+		height: 300px;
+		position: relative;
+		margin-bottom: 2rem;
+		border-radius: .3rem;
+	}
+
+	#speaker {
+		background: #fff url('../img/rory.jpg') no-repeat center 35%;	
+	}
+
+	#worship {
+		background: #fff url('../img/revo.jpg') no-repeat center 53%;
+	}
+
+	.profile-label {
+		bottom: 0;
+		position: absolute;
+		padding: .8rem .5rem;
+		background: rgba(0, 0, 0, .6);
+		color: #fff;
+		width: 100%;
+		border-bottom-right-radius: .3rem;
+		border-bottom-left-radius: .3rem;
+	}
+
+	.info-block {
+		width: 100%;
+		margin-bottom: 1em;
+		padding-left: 70px;
+	}
+
+	#info-register {
+		display: none;
+	}
+
+	#details .btn {
+		margin-top: 3rem;
+		padding: .5rem 1rem;
+	}
+
+	#details .btn h2 {
+		margin-bottom: 0;
+	}
+}
+
+/* --- [ >576 ] --- */
+@media (min-width: 576px) {
+	#details div > h2 {
+		display: none;
+	}
+
+	.profile-pic {
+		display: inline-block;
+		width: 250px;
+		height: 250px;
+		position: relative;
+		overflow: hidden;
+		border-radius: 50%;
+	}
+	
+	#speaker {
+		background: #fff url('../img/rory.jpg') no-repeat center 40%;
+		background-size: cover;
+	}
+	
+	#worship {
+		background: #fff url('../img/revo.jpg') no-repeat center 53%;
+		background-size: cover;
+	}
+	
+	.profile-label {
+		text-align: center;
+		margin-top: 67%;
+		padding: .3rem 0 4rem;
+		background: rgba(0, 0, 0, .6);
+		color: #fff;
+	}
+	
+	.info-block {
+		width: 330px;
+		padding-left: 90px;
+		margin-top: 3rem;
+		min-height: 4.2rem;
+	}
+
+	#info-dates, #info-cost, #info-location, #info-register {
+		background-size: 4rem;
+	}
+
+	#info-register {
+		display: block;
+	}
+
+	#details .btn {
+		margin-top: 3rem;
+		padding: .5rem 4rem;
+	}
+}
+
+/* --- Step 2 (>768) --- */
+@media (min-width: 768px) {
+	.profile-pic {
+		width: 300px;
+		height: 300px;
+	}
+}
+
+/* --- Step 3 (768-1199) --- */
+@media (max-width: 1199px) and (min-width: 768px) {
+	
+}
+
+/* --- Step 4 (>1200) --- */
+@media (min-width: 1200px) {
+	
 }
 
 
 /*=======================================================
-	RSVP / Reservations
+	Resources
 =======================================================*/
-#reservation .col-sm-5 h2 {
-	text-transform: uppercase;
+#resources {
+	border-top: 1px solid #eee;
+	margin-top: 4rem;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+#resources h2 {
+	text-align: center;
 	font-weight: 700;
-}
-
-/* --- Step 1 (>576): Right align text --- */
-@media (min-width: 576px) {
-	#reservation .col-sm-5 {
-		text-align: right;
-	}
-}
-
-/* --- Step 2 (>1200): Type tweaks --- */
-@media (min-width: 1200px) {
-	#reservation .col-sm-5 h2 {
-		font-size: 2.9rem;
-		line-height: 1;
-	}
+	margin-bottom: 2rem;
 }
 
 
@@ -227,7 +403,7 @@ footer {
 	background-color: #212529;
 	color: rgba(255, 255, 255, 0.5);
 	font-size: .8rem;
-	margin-top: 2rem;
+	margin-top: 4rem;
 	padding: 3rem 0 1rem;
 }
 
