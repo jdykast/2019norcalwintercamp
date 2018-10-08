@@ -334,6 +334,22 @@ nav {
 
 
 /*=======================================================
+	Dodgeball (and banner)
+=======================================================*/
+#dodgeball-banner {
+	background: #fff url('../img/dodgeball-banner.png') no-repeat center 10%;
+	background-size: cover;
+	min-height: 342px;
+	margin-bottom: 4rem;
+}
+
+#dodgeball h2 {
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+
+/*=======================================================
 	Footer
 =======================================================*/
 footer {
